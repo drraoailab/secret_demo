@@ -12,7 +12,7 @@ jobs:
       - name: Test Secret variable
         run: |
           echo "$DEVOPS"
-          if ["$DEVOPS" == "Tavant_India"]
+          if [${{ secrets.SECRET_TOKEN }} == "Tavant_India"]
           then 
             echo "Got out Secret"
           fi
