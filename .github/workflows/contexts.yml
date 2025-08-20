@@ -36,3 +36,6 @@ jobs :
             - name : Dump Runner OS Context
               run : |
                     echo "RUNNER_OS_CONTEXT: ${{ toJson(runner.os) }}"
+            - name : Dump Runner Name Context
+              run : |
+                    echo "RUNNER_NAME_CONTEXT: ${{ toJson(runner.name) }}"
