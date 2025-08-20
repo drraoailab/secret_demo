@@ -1,15 +1,16 @@
-name : Secret and Default Environment Variables
+name: Secret and Default Environment Variables
 
-on : push
+on: 
+  push:
 
-
-jobs :
-    default_env_variables :
-        runs-on : ubuntu-latest
-        steps :
-            - name : Test Secret variable 
-              run : |
-                echo "$DEVOPS"
-                env :
-                  DEVOPS : ${{ secrets.SECRET_TOKEN }}
-                  
+jobs:
+  default_env_variables:
+    env : 
+      DEVOPS: DevOps is a culture
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Secret variable
+        run: |
+          echo "$DEVOPS"
+        env:
+          DEVOPS: ${{ secrets.SECRET_TOKEN }}
